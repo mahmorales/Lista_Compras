@@ -1,74 +1,58 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Garante que padding e bordas não aumentem o tamanho total do elemento */
-}
-
+/* 1. Suas Variáveis de Cor e Fonte */
 :root {
   --font-family: "Inter", sans-serif;
-
-  --background-color-primary: #F4F5FB;
-  --background-color-secondary: #FFFFFF;
-
+  --background-color-primary: #F4F5FB; /* Fundo cinza clarinho da tela */
+  --background-color-secondary: #FFFFFF; /* Fundo branco dos itens */
   --color-brand: #CA3884;
   --color-brand-hover: #A52C6B;
   --color-danger: #C93847;
-
   --content-primary: #080B12;
   --content-secondary: #374151;
   --content-tertiary: #9CA3AF; 
   --always-white: #FFFFFF;  
-  
   --border-primary: #D1D5DB;
   --border-hover: #B9C2D0;
 }
 
+/* 2. Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-family);
-  background-color: var(--background-color-primary);
+  background-color: var(--background-color-primary); /* Fundo da página */
   color: var(--content-primary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
+  align-items: center; /* Centraliza o conteúdo na tela */
+  padding: 2rem 1.5rem;
 }
 
-/* Contentor principal para centralizar o app na tela */
-main {
-  width: 100%;
-  max-width: 480px; /* Evita que a lista fique excessivamente larga em telas grandes */
-  background-color: var(--background-color-secondary);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  margin-top: 1.5rem;
-}
-
-
+/* 3. Cabeçalho (Voltar e Título) */
 header {
   width: 100%;
-  max-width: 480px;
+  max-width: 720px; /* Aumentamos a largura máxima para o desktop */
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 2rem; /* Espaço entre o título e o input */
 }
 
 #btn-back {
   background: none;
   border: none;
-  color: var(--content-secondary);
+  color: var(--color-brand); /* No Figma parece estar com a cor rosa */
   font-family: var(--font-family);
   font-size: 0.875rem;
   cursor: pointer;
-  align-self: flex-start; /* Alinha o botão à esquerda */
+  align-self: flex-start;
   display: flex;
   align-items: center;
   gap: 0.25rem;
-}
-
-#btn-back:hover {
-  color: var(--color-brand);
 }
 
 h1 {
@@ -77,45 +61,54 @@ h1 {
   font-weight: 600;
 }
 
+/* 4. Contentor Principal (Removido o fundo branco daqui) */
+main {
+  width: 100%;
+  max-width: 720px;
+}
+
+/* 5. Campo de Entrada (Input) - MOBILE FIRST */
 .input-container {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column; /* MOBILE: Empilha o input e o botão */
+  gap: 0.75rem;
   margin-bottom: 2rem;
 }
 
 #item-input {
-  flex: 1; /* Faz o input ocupar todo o espaço disponível restante */
-  padding: 0.75rem 1rem;
+  flex: 1;
+  padding: 1rem;
   border: 1px solid var(--border-primary);
-  border-radius: 6px;
+  border-radius: 8px; /* Borda mais arredondada como no Figma */
   font-family: var(--font-family);
   font-size: 1rem;
   color: var(--content-primary);
-  background-color: var(--background-color-secondary);
+  background-color: var(--background-color-secondary); /* Input branco */
   outline: none;
 }
 
 #item-input:focus {
-  border-color: var(--border-hover);
+  border-color: var(--color-brand);
 }
 
 #btn-add {
   background-color: var(--color-brand);
   color: var(--always-white);
   border: none;
-  border-radius: 6px;
-  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
   font-family: var(--font-family);
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s;
+  width: 100%; /* MOBILE: Botão ocupa a largura toda */
 }
 
 #btn-add:hover {
   background-color: var(--color-brand-hover);
 }
 
-
+/* 6. Lista e Itens */
 #shopping-list {
   list-style: none;
   display: flex;
@@ -127,23 +120,23 @@ h1 {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  background-color: var(--background-color-primary);
-  border-radius: 6px;
-  border: 1px solid transparent;
+  padding: 1rem 1.25rem;
+  background-color: var(--background-color-secondary); /* Item branco */
+  border-radius: 8px;
+  border: 1px solid var(--border-primary); /* Borda sutil */
 }
 
 .item-checkbox {
   width: 1.25rem;
   height: 1.25rem;
-  accent-color: var(--color-brand); /* Aplica a cor da marca ao checkbox nativo */
+  accent-color: var(--color-brand);
   cursor: pointer;
 }
 
 .item-name {
-  flex: 1; /* Ocupa o espaço central, empurrando a lixeira para o fim */
+  flex: 1;
   font-size: 1rem;
-  color: var(--content-secondary);
+  color: var(--content-primary);
 }
 
 .btn-remove {
@@ -157,38 +150,56 @@ h1 {
   padding: 0.25rem;
   border-radius: 4px;
   transition: background-color 0.2s;
+  color: var(--content-tertiary);
 }
 
 .btn-remove:hover {
-  background-color: rgba(201, 56, 71, 0.1); /* Um leve fundo vermelho baseado na cor danger */
+  color: var(--color-danger);
+  background-color: rgba(201, 56, 71, 0.1);
 }
 
-/* Estado quando o item está marcado como concluído */
+/* 7. Estados Especiais (JS) */
 .list-item.completed .item-name {
   text-decoration: line-through;
   color: var(--content-tertiary);
 }
 
 .list-item.completed {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
-/* Contentor de mensagens de alerta na parte inferior */
 #alert-message {
   position: fixed;
   bottom: 2rem;
   background-color: var(--color-danger);
   color: var(--always-white);
   padding: 1rem 1.5rem;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   font-size: 0.875rem;
   transition: opacity 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .alert-hidden {
   opacity: 0;
   transform: translateY(20px);
-  pointer-events: none; /* Evita interações enquanto invisível */
+  pointer-events: none;
+}
+
+/* =========================================
+   8. MEDIA QUERIES (A Mágica da Responsividade)
+   Telas maiores que 768px (Tablets e Desktops)
+   ========================================= */
+@media (min-width: 768px) {
+  .input-container {
+    flex-direction: row; /* DESKTOP: Coloca o input e botão lado a lado */
+  }
+
+  #btn-add {
+    width: auto; /* DESKTOP: O botão volta a ter o tamanho do texto dele */
+  }
 }
 
