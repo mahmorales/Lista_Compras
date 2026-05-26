@@ -5,8 +5,15 @@ Um aplicativo web responsivo e interativo de lista de compras, desenvolvido como
 
 ## 📱 Demonstração Visual
 
-*(Dica: Tire um print da sua tela final no computador e no celular, salve a imagem na pasta do projeto e adicione o caminho dela aqui)*
-![Demonstração do Projeto](./caminho-para-sua-imagem.png)
+ Demonstração do Projeto para telas grandes:
+ <img width="1145" height="719" alt="image" src="https://github.com/user-attachments/assets/5b8fc621-0543-47ba-a34f-464112aa0d06" />
+
+ 
+Para telas de celular: 
+
+
+<img width="356" height="624" alt="image" src="https://github.com/user-attachments/assets/a13b514f-9a64-46d8-a3ed-7f9f34de7cc5" />
+
 
 ## ✨ Funcionalidades
 
@@ -36,4 +43,4 @@ Este projeto foi construído utilizando as tecnologias base da web:
 
 1. Faça o clone deste repositório:
    ```bash
-   git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+      https://mahmorales.github.io/Lista_Compras/
