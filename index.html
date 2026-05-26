@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+  
+  <title>Lista de Compras</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <button id="btn-back" aria-label="Voltar"> Voltar</button>
+    <h1>Lista de Compras</h1>
+  </header>
+
+  <main>
+    <section class="input-container">
+      <input type="text" id="item-input" placeholder="Adicione um novo item">
+      <button id="btn-add">Adicionar item</button>
+    </section>
+
+    <section class="list-container">
+      <ul id="shopping-list">
+        
+        <li class="list-item">
+          <input type="checkbox" class="item-checkbox">
+          <span class="item-name">Pão de forma</span>
+          <button class="btn-remove" aria-label="Remover item">🗑️</button>
+        </li>
+        
+        <li class="list-item">
+          <input type="checkbox" class="item-checkbox">
+          <span class="item-name">Leite</span>
+          <button class="btn-remove" aria-label="Remover item">🗑️</button>
+        </li>
+
+      </ul>
+    </section>
+
+    <div id="alert-message" class="alert-hidden">
+      <p>O item foi removido da lista.</p>
+    </div>
+  </main>
+
+  <script src="styles.css"></script>
+</body>
+</html>
